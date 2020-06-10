@@ -18,11 +18,11 @@ def valid?
 end
 
 def execute_transaction
-  if status == "pending" && sender.balance >= amount && sender.
+  if status == "pending" && sender.balance >= amount && valid?
     sender.balance -= amount
     receiver.balance += amount
     self.status = "complete"
-  elsif sender.balance < amount || sender.status = "closed"
+  else
     self.status = "rejected"
     "Transaction rejected. Please check your account."
   end
