@@ -21,9 +21,9 @@ def execute_transaction
   if sender.balance >= amount
     sender.balance -= amount
     receiver.balance += amount
-    status = "complete"
+    self.status = "complete"
   else
-    status = "rejected"
+    self.status = "rejected"
   end
 end
 
