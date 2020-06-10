@@ -25,3 +25,12 @@ def execute_transaction
     status = "rejected"
   end
 end
+
+def reverse_transfer
+  if receiver.balance >=amount
+    receiver.balance -= amount
+    sender.balance += amount
+  end
+end
+
+end 
